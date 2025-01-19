@@ -48,7 +48,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   `block py-2 px-3 rounded ${
                     isActive
-                      ? "text-tertiary bg-quertiary md:bg-transparent md:text-tertiary"
+                      ? "text-tertiary bg-quaternary md:bg-transparent md:text-tertiary"
                       : "text-quaternary hover:bg-gray-100 hover:text-tertiary md:hover:bg-transparent md:hover:text-tertiary "
                   }`
                 }
@@ -64,7 +64,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   `block py-2 px-3 rounded ${
                     isActive
-                      ? "text-tertiary bg-quertiary md:bg-transparent md:text-tertiary"
+                      ? "text-tertiary bg-quaternary md:bg-transparent md:text-tertiary"
                       : "text-quaternary hover:bg-gray-100 hover:text-tertiary md:hover:bg-transparent md:hover:text-tertiary "
                   }`
                 }

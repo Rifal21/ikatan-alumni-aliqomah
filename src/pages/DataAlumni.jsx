@@ -219,26 +219,22 @@ const DataAlumni = () => {
       {selectedAlumni && (
   <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
     <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full mx-4">
-      <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+      <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center border-b pb-2 border-primary">
         Detail Alumni
       </h3>
       <div className="grid grid-cols-2 gap-4 text-gray-700">
-        <p className="col-span-2 text-lg font-semibold text-gray-900">
+        <p className="col-span-2 text-2xl font-semibold text-primary">
           {selectedAlumni.nama}
         </p>
-        <p><strong>NIS:</strong></p>
-        <p>{selectedAlumni.nis}</p>
-        <p><strong>TTL:</strong></p>
-        <p>{selectedAlumni.ttl}</p>
-        <p><strong>Angkatan:</strong></p>
-        <p>{selectedAlumni.thn}</p>
-        <p><strong>Kelas:</strong></p>
-        <p>{selectedAlumni.kelas}</p>
-        <p><strong>Status:</strong></p>
-        <p>{selectedAlumni.status}</p>
+        <p><strong>Jenis Kelamin</strong></p>
+        <p>: {selectedAlumni.sex === "L" ? "Laki-laki" : "Perempuan"}</p>
+        <p><strong>Tahun Masuk</strong></p>
+        <p>: {selectedAlumni.thn}</p>
+        <p><strong>Kelas</strong></p>
+        <p>: {selectedAlumni.kelas}</p>
       </div>
       <button
-        className="mt-6 w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2"
+        className="mt-6 w-full py-2 bg-primary text-white hover:text-tertiary rounded-lg hover:bg-primary/90 "
         onClick={closePopup}
       >
         Tutup

@@ -21,7 +21,7 @@ const Navbar = () => {
             className="h-8"
             alt="Logo"
           />
-          <span className="self-center text-base md:text-xl font-semibold whitespace-nowrap dark:text-white">
+          <span className="self-center text-base md:text-xl font-semibold whitespace-nowrap text-white">
             Ikatan Alumni LPI Al-IQOMAH
           </span>
         </NavLink>

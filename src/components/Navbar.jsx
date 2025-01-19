@@ -10,19 +10,19 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900">
+    <nav className="bg-primary border-gray-200 ">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <NavLink
           to="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <img
-            src="https://flowbite.com/docs/images/logo.svg"
+            src="./image/logo.png"
             className="h-8"
             alt="Logo"
           />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            Ikatan Alumni
+          <span className="self-center text-base md:text-xl font-semibold whitespace-nowrap dark:text-white">
+            Ikatan Alumni LPI Al-IQOMAH
           </span>
         </NavLink>
         <button
@@ -41,15 +41,15 @@ const Navbar = () => {
           } w-full md:block md:w-auto`}
           id="navbar-default"
         >
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
             <li>
               <NavLink
                 to="/"
                 className={({ isActive }) =>
                   `block py-2 px-3 rounded ${
                     isActive
-                      ? "text-white bg-blue-700 md:bg-transparent md:text-blue-700 dark:text-white md:dark:text-blue-500"
-                      : "text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700"
+                      ? "text-tertiary bg-quertiary md:bg-transparent md:text-tertiary"
+                      : "text-quaternary hover:bg-gray-100 hover:text-tertiary md:hover:bg-transparent md:hover:text-tertiary "
                   }`
                 }
                 aria-current="page"
@@ -64,8 +64,8 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   `block py-2 px-3 rounded ${
                     isActive
-                      ? "text-white bg-blue-700 md:bg-transparent md:text-blue-700 dark:text-white md:dark:text-blue-500"
-                      : "text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700"
+                      ? "text-tertiary bg-quertiary md:bg-transparent md:text-tertiary"
+                      : "text-quaternary hover:bg-gray-100 hover:text-tertiary md:hover:bg-transparent md:hover:text-tertiary "
                   }`
                 }
                 onClick={() => setIsMenuOpen(false)}
@@ -79,8 +79,8 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   `block py-2 px-3 rounded ${
                     isActive
-                      ? "text-white bg-blue-700 md:bg-transparent md:text-blue-700 dark:text-white md:dark:text-blue-500"
-                      : "text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700"
+                      ? "text-tertiary bg-quaternary md:bg-transparent md:text-tertiary"
+                      : "text-quaternary hover:bg-gray-100 hover:text-tertiary md:hover:bg-transparent md:hover:text-tertiary "
                   }`
                 }
                 onClick={() => setIsMenuOpen(false)}
@@ -94,8 +94,8 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   `block py-2 px-3 rounded ${
                     isActive
-                      ? "text-white bg-blue-700 md:bg-transparent md:text-blue-700 dark:text-white md:dark:text-blue-500"
-                      : "text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700"
+                      ? "text-tertiary bg-quaternary md:bg-transparent md:text-tertiary"
+                      : "text-quaternary hover:bg-gray-100 hover:text-tertiary md:hover:bg-transparent md:hover:text-tertiary "
                   }`
                 }
                 onClick={() => setIsMenuOpen(false)}
@@ -103,21 +103,6 @@ const Navbar = () => {
                 Tentang
               </NavLink>
             </li>
-            {/* <li>
-              <NavLink
-                to="/contact"
-                className={({ isActive }) =>
-                  `block py-2 px-3 rounded ${
-                    isActive
-                      ? "text-white bg-blue-700 md:bg-transparent md:text-blue-700 dark:text-white md:dark:text-blue-500"
-                      : "text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700"
-                  }`
-                }
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
-              </NavLink>
-            </li> */}
           </ul>
         </div>
       </div>

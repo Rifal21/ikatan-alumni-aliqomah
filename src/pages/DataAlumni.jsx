@@ -46,12 +46,31 @@ const DataAlumni = () => {
           );
           const rows = response.data.values;
 
+          // if (rows && rows.length > 1) {
+          //   const header = rows[0];
+          //   const data = rows.slice(1).map((row) => {
+          //     const mappedRow = {};
+          //     header.forEach((key, index) => {
+          //       mappedRow[key.toLowerCase()] = row[index] || "";
+          //     });
+          //     return mappedRow;
+          //   });
           if (rows && rows.length > 1) {
             const header = rows[0];
             const data = rows.slice(1).map((row) => {
               const mappedRow = {};
               header.forEach((key, index) => {
-                mappedRow[key.toLowerCase()] = row[index] || "";
+                let value = row[index] || "";
+
+                // Transform Google Drive URL into direct image URL
+                if (key.toLowerCase() === "foto" && value.includes("drive.google.com")) {
+                  const fileIdMatch = value.match(/\/d\/([^/]+)\//);
+                  if (fileIdMatch) {
+                    value = `https://drive.google.com/uc?id=${fileIdMatch[1]}`;
+                  }
+                }
+
+                mappedRow[key.toLowerCase()] = value;
               });
               return mappedRow;
             });
@@ -220,8 +239,17 @@ const DataAlumni = () => {
   <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
     <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full mx-4">
       <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center border-b pb-2 border-primary">
-        Detail Alumni
+        Detail Alumni {selectedAlumni.sex === 'P' ? 'Santriwati' : 'Santriwan'}
       </h3>
+      {/* Bagian untuk Gambar */}
+      <div className="flex justify-center mb-6">
+        <img
+          src={selectedAlumni.sex === 'P' ? './image/P.png' : './image/L.png'} // Ganti dengan path gambar default jika tidak ada
+          alt={`${selectedAlumni.nama} Photo`}
+          className="w-32 h-32 rounded-full  object-cover"
+        />
+      </div>
+      {/* Detail Alumni */}
       <div className="grid grid-cols-2 gap-4 text-gray-700">
         <p className="col-span-2 text-2xl font-semibold text-primary">
           {selectedAlumni.nama}
@@ -242,6 +270,7 @@ const DataAlumni = () => {
     </div>
   </div>
 )}
+
 
     </div>
   );
